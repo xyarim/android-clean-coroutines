@@ -4,9 +4,9 @@ sealed class Result<out T, out R> {
     class Success<out T>(val successData: T) : Result<T, Nothing>()
     class Failure<out R : Error>(val errorData: R) : Result<Nothing, R>()
 
-    public sealed class State : Result<Nothing, Nothing>() {
-        class Loading : State()
-        class Loaded : State()
+    sealed class State : Result<Nothing, Nothing>() {
+        object Loading : State()
+        object Loaded : State()
     }
 
     fun handleResult(

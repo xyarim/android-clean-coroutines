@@ -7,6 +7,10 @@ data class PhotoResponse(
     val id: String,
     @SerializedName("color")
     val color: String,
+    @SerializedName("width")
+    val width: Int,
+    @SerializedName("height")
+    val height: Int,
     @SerializedName("urls")
     val imageUrls: ImageUrls
 )
