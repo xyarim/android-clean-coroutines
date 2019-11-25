@@ -2,7 +2,7 @@
 
 Simple app that shows how to architect an android app in a clean architecture with kotlin coroutines.
 It simply shows a list of photo that is fetched from unsplash api
-![image](https://rubygarage.s3.amazonaws.com/uploads/article_image/file/2059/Artboard_155_2x.png)
+![image](https://user-images.githubusercontent.com/21035435/69536839-9f4c8e80-0fa0-11ea-85ee-d7823e5a46b0.png)
 ## Libraries
 
 ### Android Jetpack
