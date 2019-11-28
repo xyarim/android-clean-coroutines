@@ -25,7 +25,6 @@ val networkModules = module {
 val viewModels = module {
     viewModel {
         PhotoListViewModel(get(named(GET_NEWS_USECASE)))
-//        PhotoListViewModelTest()
     }
 }
 

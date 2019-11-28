@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xyarim.randompics.databinding.PhotoFragmentBinding
-import com.xyarim.randompics.utils.EndlessRecyclerOnScrollListener
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 import org.koin.android.ext.android.inject
+
+/**
+ * Display a list of [Photo]s.
+ */
 
 @ObsoleteCoroutinesApi
 class PhotoListFragment : Fragment() {
