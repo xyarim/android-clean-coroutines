@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xyarim.randompics.databinding.PhotoFragmentBinding
 import kotlinx.coroutines.ObsoleteCoroutinesApi
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
  * Display a list of [Photo]s.
@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 @ObsoleteCoroutinesApi
 class PhotoListFragment : Fragment() {
 
-    private val viewModel: PhotoListViewModel by inject()
+    private val photoListViewModel: PhotoListViewModel by viewModel()
 
     private lateinit var photoFragmentBinding: PhotoFragmentBinding
     override fun onCreateView(
@@ -26,7 +26,7 @@ class PhotoListFragment : Fragment() {
     ): View? {
         photoFragmentBinding = PhotoFragmentBinding.inflate(inflater, container, false)
             .apply {
-                viewmodel = viewModel
+                viewmodel = photoListViewModel
             }
         // Set the lifecycle owner to the lifecycle of the view
         photoFragmentBinding.lifecycleOwner = this.viewLifecycleOwner
@@ -38,7 +38,7 @@ class PhotoListFragment : Fragment() {
         photoFragmentBinding.photoList.layoutManager =
             LinearLayoutManager(this@PhotoListFragment.context)
         photoFragmentBinding.photoList.adapter = PhotoAdapter()
-        viewModel.requestItems()
+        photoListViewModel.requestItems()
     }
 
 }
